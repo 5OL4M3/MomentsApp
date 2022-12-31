@@ -71,7 +71,7 @@ const Auth = () => {
                         )}
                         <Input name='email' label='Email Address' handleChange={handleChange} type='email' autoFocus error={errorMsg}/>
                         <Input name='password' label='Password' handleChange={handleChange} type={showPassword ? "text" : "password"} handleShowPassword={handleShowPassword} autoFocus error={errorMsg}/>
-                        {isSignup && <Input name="passwordConfirmation" label="Repeat Password" handleChange={handleChange} type={showPassword ? "text" : "password"} error={errorMsg}/>}
+                        {isSignup && <Input name="passwordConfirmation" label="Confirm Password" handleChange={handleChange} type={showPassword ? "text" : "password"} error={errorMsg}/>}
                     </Grid>
                     {working && <GoogleLogin onSuccess={(response) => onSuccess(response)} onError={() => console.log('Error')}/>}
                     <Button sx={{marginTop: "15px"}}type="submit" fullWidth variant='contained' color='primary'>
