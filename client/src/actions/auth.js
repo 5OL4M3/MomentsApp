@@ -9,8 +9,9 @@ export const signin = (formData, navigate, setErrorMsg) => async (dispatch) => {
         setErrorMsg('');
         navigate('/main');
     } catch (error) {
+        console.log(error);
         setErrorMsg(error.response.data.message);
-        console.log(error.response.data.message);
+        
     }
 }
 

@@ -6,15 +6,24 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const signin = async (req, res) => {
+    
     const {email, password} = req.body;
 
     try {
+        console.log('hello');
         const existingUser = await User.findOne({email});
         
-        if(!existingUser) return res.status(404).json({message: 'email address does not exist'});
+        if(!existingUser){
+            console.log('email address does not exist')
+            return res.status(404).json({message: 'email address does not exist'});
+        }
 
         const isPasswordCorrect = await bcrypt.compare(password, existingUser.password);
-        if(!isPasswordCorrect) return res.status(400).json({message: 'password is incorrect'});
+        {
+            console.log('password is incorrect');
+            if(!isPasswordCorrect) return res.status(400).json({message: 'password is incorrect'});
+        }
+        
         
         const token = jwt.sign({email: existingUser.email, id: existingUser._id}, process.env.SECRET, {expiresIn: '1h'});
         
