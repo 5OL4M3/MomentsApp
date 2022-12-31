@@ -13,6 +13,7 @@ const Auth = () => {
                     <img src={memories} alt='memories' height='60'/>
                 </div>
                 <Typography variant="h5" sx={{color: 'white', outlineColor: 'black'}}>Post, Share, and Remember your best moments</Typography>
+                <Typography variant="h5" sx={{color: 'white', outlineColor: 'black'}}>(Please give it a second to load when logging in and signing up. Thank you.)</Typography>
             </Grid>
             <AuthForm/>
         </Container>
