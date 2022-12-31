@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({baseURL: 'https://mymomentsapp.onrender.com/'});
+const API = axios.create({baseURL: 'https://mymomentsapp-7jzf.onrender.com/posts'});
 
 API.interceptors.request.use((req) => {
     if(localStorage.getItem('profile')) {
